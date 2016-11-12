@@ -1,0 +1,58 @@
+html{font-size: 20px}
+header{
+    width:16rem;
+    height:2.475rem; background: -webkit-linear-gradient(#f6f6f6,#ececec); border-top: 1px solid #c5c5c5; text-align: center; position: relative;}
+header .back{position: absolute;
+    left:0.55rem;
+    top:0.5rem;
+    width:3.1rem;
+    height:1.5rem; font-size: 1.5rem; text-indent: -9999rem; background: url("../img/fan.png") no-repeat; background-size: 100%; }
+header img{ width:9.4rem;
+    height:2.2rem; margin-top:0.175rem;}
+header .fenlei{position: absolute;
+    right:0.55rem;
+    top:0.5rem;
+    width:3.1rem;
+    height:1.5rem; font-size: 1.5rem; text-indent: -9999rem; background: url("../img/fen.png") no-repeat; background-size: 100%; }
+.nav{
+    width:16rem;
+    height:2.025rem;}
+.nav li{
+    border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;
+    float: left;}
+.nav li:nth-child(4){border-right: none;}
+.nav li a.on{
+    color: #d51942;}
+.nav li a{
+    width:3.96rem;
+    height:2rem; text-align: center;line-height: 2rem;font-size: 0.575rem; display: block;
+    color: #999999;}
+.shang{
+    width:16rem;}
+.shang_li li{
+    width:16rem;
+    height:4.975rem; border-bottom: 1px solid #dcdcdc; overflow: hidden}
+.shang_li a{display: block;overflow: hidden;
+    width:14.45rem;
+    margin:0.5rem auto 0;}
+.imgb{padding: 0.175rem;
+    border:1px solid #dcdcdc;
+    float: left; margin-right:0.775rem; }
+.imgb img{
+    width:5.6rem;
+    height:3.6rem;}
+.span1{
+    width:7.625rem;
+    float: left; font-size:0.65rem; line-height: 0.9rem;
+    color: #000; }
+.span1 i{
+    color: #c3213c; font-size:0.65rem; }
+.span2{float: left; margin-top: 0.375rem}
+.span2 i{color: #c3213c; font-size:0.75rem;}
+.span2 b{color: #c3213c;font-size: 0.475rem;}
+.span2 em{
+    color: #999999;
+    text-decoration:line-through; font-weight: 500;margin-left: 0.625rem}
+.shang_li p{
+    float: left; margin-top: 0.46rem; font-size: 0.45rem;
+    color:#999;}

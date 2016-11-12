@@ -1,0 +1,49 @@
+html{font-size: 20px}
+header{ font-size:0.775rem ;
+    color: #333333; text-align: center; line-height: 2.475rem;
+    width:16rem;
+    height:2.475rem; background: -webkit-linear-gradient(#f6f6f6,#ececec); border-top: 1px solid #c5c5c5; text-align: center; position: relative;}
+header .back{position: absolute;
+    left:0.55rem;
+    top:0.5rem;
+    width:3.1rem;
+    height:1.5rem; font-size: 1.5rem; text-indent: -9999rem; background: url("../img/fan.png") no-repeat; background-size: 100%; }
+
+.nav li{
+    border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;
+    float: left;}
+.nav li:nth-child(4){border-right: none;}
+.nav li a.on{
+    color: #d51942;}
+.nav li a{
+    width:3.96rem;
+    height:2rem; text-align: center;line-height: 2rem;font-size: 0.575rem; display: block;
+    color: #999999;}
+.shang{
+    width:16rem;}
+.shang_li li{
+    width:16rem;
+    height:6.45rem; border-bottom: 1px solid #dcdcdc; overflow: hidden}
+.shang_li a{display: block;overflow: hidden;
+    width:14.45rem;
+    margin:0.5rem auto 0;}
+.shang_li img{
+    width:10rem;
+    height:5rem;
+    float: right;}
+.shang_li .span1{
+    width:4.45rem;
+    height:2.875rem;
+    float: left; background: url("../img/n.png") no-repeat; background-size:100%; }
+.shang_li .span2{
+    float: left; margin-top: 0.6rem;
+    width:2.05rem;
+    height:1.775rem; background: url("../img/as.png") no-repeat;
+    background-size:100%;}
+.span3{
+    float: left;
+    margin:0.75rem 0 0 0.25rem;
+    width:1.25rem; height: 1.25rem; font-size:0.55rem;
+    color: #999999; }
+.span3 i{
+    color: #c7223d;}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,minimum-scale=1,initial-scale=1"/>
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/jubao.css" rel="stylesheet"/>
+    <script>
+        var rem=20;
+        ;(function(win,doc){
+            var rem=20/320*doc.documentElement.clientWidth;
+            doc.documentElement.style.fontSize=rem+'px';
+            win.addEventListener('resize',function(){
+                rem = 20/320*doc.documentElement.clientWidth;
+                doc.documentElement.style.fontSize = rem+'px';
+            },false)
+        })(window,document);
+        document.addEventListener('DOMContentLoaded',function(){
+            var oBanner = document.querySelector('.banner');
+            var oUl = oBanner.children[0];
+            var aLi = oUl.children;
+            var oOl = oBanner.children[1];
+            var aBtn = oOl.children;
+
+            oUl.style.width = aLi[0].offsetWidth*aLi.length/rem+'rem';
+
+            var bOk = false;
+            var iNow = 1;
+            var x = -iNow*aLi[0].offsetWidth/rem;
+            oUl.addEventListener('touchstart',function(ev){
+                if(bOk)return;
+                bOk = true;
+                oUl.style.WebkitTransition = 'none';
+                var oTouch = ev.targetTouches[0];
+                var downX = oTouch.pageX/rem;
+                var disX = downX-x;
+                function fnMove(ev){
+                    var oTouch = ev.targetTouches[0];
+                    x = oTouch.pageX/rem-disX;
+                    oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
+                }
+                function fnEnd(ev){
+                    document.removeEventListener('touchmove',fnMove,false);
+                    document.removeEventListener('touchend',fnEnd,false);
+
+                    var oTouch = ev.changedTouches[0];
+                    var upX = oTouch.pageX/rem;
+
+                    if(Math.abs(upX-downX)>100/rem){
+                        //判断iNow要++还是--
+                        if(downX>upX){
+                            iNow++;
+                        }else if(downX<upX){
+                            iNow--;
+                        }
+                    }
+                    x = -iNow*aLi[0].offsetWidth/rem;
+
+                    oUl.style.WebkitTransition = '.5s all ease';
+
+                    oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
+                    function tranEnd(){
+                        oUl.removeEventListener('transitionend',tranEnd,false);
+                        if(iNow==0){
+                            iNow = aLi.length-2;
+                            oUl.style.WebkitTransition = 'none';
+                            x = -iNow*aLi[0].offsetWidth/rem;
+                            oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
+                        }else if(iNow==aLi.length-1){
+                            iNow = 1;
+                            oUl.style.WebkitTransition = 'none';
+                            x = -iNow*aLi[0].offsetWidth/rem;
+                            oUl.style.WebkitTransform = 'translate3d('+x+'rem,0,0)';
+                        }
+
+                        for(var i=0;i<aBtn.length;i++){
+                            aBtn[i].classList.remove('on');
+                        }
+                        aBtn[iNow-1].classList.add('on');
+
+                        bOk = false;
+                    }
+                    oUl.addEventListener('transitionend',tranEnd,false);
+                }
+                document.addEventListener('touchmove',fnMove,false);
+                document.addEventListener('touchend',fnEnd,false);
+                ev.preventDefault();
+            },false);
+        },false);
+    </script>
+</head>
+<body>
+<header>
+    <a href="javascript:;" class="back">返回</a>
+    聚宝盆
+</header>
+<section class="nav clearfix">
+    <nav>
+        <ul>
+            <li><a href="javascript:;">商品</a></li>
+            <li><a href="javascript:;">生活</a></li>
+            <li><a href="javascript:;" >品牌</a></li>
+            <li><a href="javascript:;" class="on">聚宝盆</a></li>
+        </ul>
+    </nav>
+</section>
+<section class="banner clearfix">
+    <ul class="ban_li">
+        <li><img src="img/ban.png" alt=""/></li>
+        <li><img src="img/ju.png" alt=""/></li>
+        <li><img src="img/ban.png" alt=""/></li>
+        <li><img src="img/qiu.png" alt=""/></li>
+        <li><img src="img/ban.png" alt=""/></li>
+        <li><img src="img/ban.png" alt=""/></li>
+        <li><img src="img/ju.png" alt=""/></li>
+    </ul>
+    <ol class="ban_ol">
+        <li  class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</section>
+<section class="content">
+    <ul>
+        <li>
+            <a href="javascript:;">
+            <span></span>
+            <i><b class="b1">聚名品</b>
+                <b class="b2">轻奢购物第一站</b></i>
+            <em></em>
+
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <span></span>
+                <i><b class="b1">聚名品</b>
+                    <b class="b2">轻奢购物第一站</b></i>
+                <em></em>
+
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <span></span>
+                <i><b class="b1">聚名品</b>
+                    <b class="b2">轻奢购物第一站</b></i>
+                <em></em>
+
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <span></span>
+                <i><b class="b1">聚名品</b>
+                    <b class="b2">轻奢购物第一站</b></i>
+                <em></em>
+
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <span></span>
+                <i><b class="b1">聚名品</b>
+                    <b class="b2">轻奢购物第一站</b></i>
+                <em></em>
+
+            </a>
+        </li>
+
+    </ul>
+</section>
+</body>
+</html>
